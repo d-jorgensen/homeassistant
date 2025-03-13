@@ -1,0 +1,43 @@
+type: entities
+title: Edmonton Alerts
+entities:
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_warnings
+        state: "1"
+    row:
+      entity: sensor.edmonton_warnings
+      type: attribute
+      name: Warning
+      attribute: alert_1
+      icon: mdi:lightning-bolt
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_warnings
+        state: "1"
+    row:
+      type: attribute
+      entity: sensor.edmonton_warnings
+      attribute: alert_time_1
+      icon: none
+      name: Time
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_watches
+        state: "1"
+    row:
+      entity: sensor.edmonton_watches
+      type: attribute
+      name: Watch
+      attribute: alert_1
+      icon: mdi:lightning-bolt
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_watches
+        state: "1"
+    row:
+      type: attribute
+      entity: sensor.edmonton_watches
+      attribute: alert_time_1
+      icon: none
+      name: Time

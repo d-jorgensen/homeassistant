@@ -12,6 +12,9 @@ entities:
       secondary_info: last-changed
       attribute: alert_1
       icon: mdi:lightning-bolt
+      tap_action:
+        action: url
+        url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
   - type: conditional
     conditions:
       - entity: sensor.edmonton_watches
@@ -23,6 +26,9 @@ entities:
       icon: mdi:lightning-bolt
       name: " "
       secondary_info: last-changed
+      tap_action:
+        action: url
+        url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
   - type: conditional
     conditions:
       - entity: sensor.edmonton_watches
@@ -48,3 +54,6 @@ entities:
       icon: mdi:cloud-alert
       name: " "
       secondary_info: last-changed
+      tap_action:
+        action: url
+        url_path: https://weather.gc.ca/warnings/report_e.html?ab33=

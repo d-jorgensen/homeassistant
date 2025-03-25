@@ -8,27 +8,8 @@ entities:
     row:
       entity: sensor.edmonton_warnings
       type: attribute
-      name: Warning
-      attribute: alert_1
-      icon: mdi:lightning-bolt
-  - type: conditional
-    conditions:
-      - entity: sensor.edmonton_warnings
-        state: "1"
-    row:
-      type: attribute
-      entity: sensor.edmonton_warnings
-      attribute: alert_time_1
-      icon: none
-      name: Time
-  - type: conditional
-    conditions:
-      - entity: sensor.edmonton_watches
-        state: "1"
-    row:
-      entity: sensor.edmonton_watches
-      type: attribute
-      name: Watch
+      name: " "
+      secondary_info: last-changed
       attribute: alert_1
       icon: mdi:lightning-bolt
   - type: conditional
@@ -36,11 +17,12 @@ entities:
       - entity: sensor.edmonton_watches
         state: "1"
     row:
-      type: attribute
       entity: sensor.edmonton_watches
-      attribute: alert_time_1
-      icon: none
-      name: Time
+      type: attribute
+      attribute: alert_1
+      icon: mdi:lightning-bolt
+      name: " "
+      secondary_info: last-changed
   - type: conditional
     conditions:
       - entity: sensor.edmonton_watches
@@ -64,13 +46,5 @@ entities:
       entity: sensor.edmonton_statements
       attribute: alert_1
       icon: mdi:cloud-alert
-  - type: conditional
-    conditions:
-      - entity: sensor.edmonton_statements
-        state: "1"
-    row:
-      type: attribute
-      entity: sensor.edmonton_statements
-      attribute: alert_time_1
-      icon: none
-      name: Time
+      name: " "
+      secondary_info: last-changed

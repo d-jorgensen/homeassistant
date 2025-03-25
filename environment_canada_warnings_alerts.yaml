@@ -63,7 +63,7 @@ entities:
       type: attribute
       entity: sensor.edmonton_statements
       attribute: alert_1
-      icon: mdi:lightning-bolt
+      icon: mdi:cloud-alert
   - type: conditional
     conditions:
       - entity: sensor.edmonton_statements

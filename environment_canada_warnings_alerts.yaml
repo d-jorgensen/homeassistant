@@ -41,3 +41,36 @@ entities:
       attribute: alert_time_1
       icon: none
       name: Time
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_watches
+        state: "0"
+      - entity: sensor.edmonton_warnings
+        state: "0"
+      - entity: sensor.edmonton_statements
+        state: "0"
+    row:
+      type: attribute
+      entity: input_text.no_alerts
+      attribute: text1
+      icon: none
+      name: No alerts
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_statements
+        state: "1"
+    row:
+      type: attribute
+      entity: sensor.edmonton_statements
+      attribute: alert_1
+      icon: mdi:lightning-bolt
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_statements
+        state: "1"
+    row:
+      type: attribute
+      entity: sensor.edmonton_statements
+      attribute: alert_time_1
+      icon: none
+      name: Time

@@ -17,25 +17,39 @@ entities:
         url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
   - type: conditional
     conditions:
-      - entity: sensor.edmonton_watches
-        state: "1"
+      - entity: sensor.edmonton_warnings
+        state: "2"
     row:
-      entity: sensor.edmonton_watches
+      entity: sensor.edmonton_warnings
       type: attribute
-      attribute: alert_1
-      icon: mdi:lightning-bolt
       name: " "
       secondary_info: last-changed
+      attribute: alert_1
+      icon: mdi:lightning-bolt
       tap_action:
         action: url
         url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
   - type: conditional
     conditions:
-      - entity: sensor.edmonton_watches
-        state: "0"
+      - entity: sensor.edmonton_warnings
+        state: "2"
+    row:
+      entity: sensor.edmonton_warnings
+      type: attribute
+      name: " "
+      secondary_info: last-changed
+      attribute: alert_2
+      icon: mdi:lightning-bolt
+      tap_action:
+        action: url
+        url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
+  - type: conditional
+    conditions:
       - entity: sensor.edmonton_warnings
         state: "0"
-      - entity: sensor.edmonton_statements
+      - entity: sensor.edmonton_watches
+        state: "0"
+      - entity: sensor.edmonton_advisory
         state: "0"
     row:
       type: attribute
@@ -45,12 +59,54 @@ entities:
       name: No alerts
   - type: conditional
     conditions:
-      - entity: sensor.edmonton_statements
+      - entity: sensor.edmonton_advisory
         state: "1"
     row:
       type: attribute
       entity: sensor.edmonton_statements
       attribute: alert_1
+      icon: mdi:cloud-alert
+      name: " "
+      secondary_info: last-changed
+      tap_action:
+        action: url
+        url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_watches
+        state: "1"
+    row:
+      type: attribute
+      entity: sensor.edmonton_watches
+      attribute: alert_1
+      icon: mdi:cloud-alert
+      name: " "
+      secondary_info: last-changed
+      tap_action:
+        action: url
+        url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_watches
+        state: "2"
+    row:
+      type: attribute
+      entity: sensor.edmonton_watches
+      attribute: alert_1
+      icon: mdi:cloud-alert
+      name: " "
+      secondary_info: last-changed
+      tap_action:
+        action: url
+        url_path: https://weather.gc.ca/warnings/report_e.html?ab33=
+  - type: conditional
+    conditions:
+      - entity: sensor.edmonton_watches
+        state: "2"
+    row:
+      type: attribute
+      entity: sensor.edmonton_watches
+      attribute: alert_2
       icon: mdi:cloud-alert
       name: " "
       secondary_info: last-changed
